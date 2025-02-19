@@ -31,8 +31,7 @@ def setup_telemetry(app: FastAPI):
     otel_exporter_endpoint = os.getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
    
     # Get the connection string from the environment variables
-    ai_project_conn_str = os.getenv("AZURE_LOCATION")+".api.azureml.ms;"+os.getenv(
-        "AZURE_SUBSCRIPTION_ID")+";"+os.getenv("AZURE_RESOURCE_GROUP")+";"+os.getenv("AZURE_AI_PROJECT_NAME")
+    ai_project_conn_str = os.getenv("AI_PROJECT_CONNECTION_STRING")
     
     # Configure OpenTelemetry using Azure AI Project 
     with AIProjectClient.from_connection_string(

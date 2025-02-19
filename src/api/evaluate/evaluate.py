@@ -26,7 +26,7 @@ def evaluate_remote(data_path):
     # At the moment, it should be in the format "<HostName>;<AzureSubscriptionId>;<ResourceGroup>;<HubName>"
     # Customer needs to login to Azure subscription via Azure CLI and set the environment variables
 
-    ai_project_conn_str = os.getenv("AZURE_LOCATION")+".api.azureml.ms;"+os.getenv("AZURE_SUBSCRIPTION_ID")+";"+os.getenv("AZURE_RESOURCE_GROUP")+";"+os.getenv("AZURE_AI_PROJECT_NAME")
+    ai_project_conn_str = os.getenv("AI_PROJECT_CONNECTION_STRING")
 
     project_client = AIProjectClient.from_connection_string(
         credential=DefaultAzureCredential(),
